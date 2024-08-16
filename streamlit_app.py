@@ -1,7 +1,7 @@
 import pickle
 import streamlit as st
 import requests
-import gzip  # Make sure this is imported
+import gzip
 
 def fetch_poster(movie_id):
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=8265bd1679663a7ea12ac168da84d2e8&language=en-US"
@@ -21,6 +21,26 @@ def recommend(movie):
         recommended_movie_names.append(movies.iloc[i[0]].title)
     return recommended_movie_names, recommended_movie_posters
 
+# Add custom CSS for justified text
+st.markdown("""
+    <style>
+    .justified-text {
+        text-align: justify;
+    }
+    .main-header {
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+        color: #4CAF50;
+        margin-bottom: 0.5rem;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+# MovieMingle heading
+st.markdown('<h1 class="main-header">MovieMingle</h1>', unsafe_allow_html=True)
+
+# Movie Recommendation System heading
 st.header('Movie Recommendation System Using Machine Learning')
 
 # Load the movie list without compression
@@ -40,17 +60,17 @@ if st.button('Show Recommendation'):
     recommended_movie_names, recommended_movie_posters = recommend(selected_movie)
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
-        st.text(recommended_movie_names[0])
+        st.markdown(f'<div class="justified-text">{recommended_movie_names[0]}</div>', unsafe_allow_html=True)
         st.image(recommended_movie_posters[0])
     with col2:
-        st.text(recommended_movie_names[1])
+        st.markdown(f'<div class="justified-text">{recommended_movie_names[1]}</div>', unsafe_allow_html=True)
         st.image(recommended_movie_posters[1])
     with col3:
-        st.text(recommended_movie_names[2])
+        st.markdown(f'<div class="justified-text">{recommended_movie_names[2]}</div>', unsafe_allow_html=True)
         st.image(recommended_movie_posters[2])
     with col4:
-        st.text(recommended_movie_names[3])
+        st.markdown(f'<div class="justified-text">{recommended_movie_names[3]}</div>', unsafe_allow_html=True)
         st.image(recommended_movie_posters[3])
     with col5:
-        st.text(recommended_movie_names[4])
+        st.markdown(f'<div class="justified-text">{recommended_movie_names[4]}</div>', unsafe_allow_html=True)
         st.image(recommended_movie_posters[4])
