@@ -7,3 +7,10 @@ Collaborative filtering: Collaborative filtering approaches build a model from t
 Content-based filtering: Content-based filtering approaches uses a series of discrete characteristics of an item in order to recommend additional items with similar properties. Content-based filtering methods are totally based on a description of the item and a profile of the user's preferences. It recommends items based on the user's past preferences. Let's develop a basic recommendation system using Python and Pandas.
 
 Let's develop a basic recommendation system by suggesting items that are most similar to a particular item, in this case, movies. It just tells what movies/items are most similar to the user's movie choice.
+
+
+## Home Page
+![image](https://github.com/user-attachments/assets/82e00c24-5183-4db5-924f-c11cdb214015)
+
+## Suggestion 
+![image](https://github.com/user-attachments/assets/1ef05604-47df-49ea-8022-43b3717bbdaf)
